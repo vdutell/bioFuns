@@ -1,4 +1,4 @@
-BioFuns
+bioFuns
 =======
 
 Useful Bioinformatics Functions
