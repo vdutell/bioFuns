@@ -24,6 +24,7 @@ A barplot containing the results of alignment for all accepted_hits.bam, and unm
 
 ####Author(s):
 Richard Dannebaum
+
 Vasha DuTell
 
 ####Example:
@@ -48,6 +49,7 @@ calcLogFC(va,vb)
 ####Arguments:
 **va**
 A numeric list containing the baseline expression values
+
 **vb**
 A numeric list containing the expression values to be compared to baseline
 
@@ -59,6 +61,7 @@ va and vb must be lists of the same length, and the elements (genes) for which e
 
 ####Author(s):
 Vasha DuTell
+
 Dar Dahen
 
 ####Example:
@@ -97,6 +100,7 @@ To save time in future runs, if not found, this function will create and save a 
 
 ####Author(s):
 Vasha DuTell
+
 Malcom Cook
 
 
@@ -126,6 +130,7 @@ A ggplot geom_bar plot with the enrichment of the top GO terms plotted on the x-
 
 ####Author(s):
 Vasha DuTell
+
 Ashley Woodfin
 
 ####Example:
