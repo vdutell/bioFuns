@@ -46,18 +46,16 @@ Usage:
 
 Arguments:
 	va
-		A numeric list containing the baseline expression values
+	A numeric list containing the baseline expression values
 
 	vb
-		A numeric list containing the expression values to be compared to baseline
+	A numeric list containing the expression values to be compared to baseline
 
 Value:
 	A numeric list containing either the fold change or log2 fold change from va to vb.
 
 Notes:
-	va and vb must be lists of the same length, and the elements (genes) for which each expression level corresponds in the same order in both lists.
-
-	Definition of Fold Change: Standard FC, whether postive or negative, always has a magnitude greater than 1, where positive FC is defined here as an INCREASE from va TO vb, ie vb/va > 1. Likewise, negative FC is defined here as a DECREASE from va to vb, ie -(va/vb > 1). For example a fold change from 6 to 2 would be -6/2 = -3. Additionally, log(FC) is log2(FC), and is defined as either log2(vb/va) or -log2(va/vb), whichever has largest magnitude.
+	va and vb must be lists of the same length, and the elements (genes) for which each expression level corresponds in the same order in both lists. Definition of Fold Change: Standard FC, whether postive or negative, always has a magnitude greater than 1, where positive FC is defined here as an INCREASE from va TO vb, ie vb/va > 1. Likewise, negative FC is defined here as a DECREASE from va to vb, ie -(va/vb > 1). For example a fold change from 6 to 2 would be -6/2 = -3. Additionally, log(FC) is log2(FC), and is defined as either log2(vb/va) or -log2(va/vb), whichever has largest magnitude.
 
 Author(s):
 	Vasha DuTell
@@ -86,10 +84,10 @@ Arguments:
 		A list of ensembl gene IDs
 
 	analysis
-		A string indicating which type of GO analysis to perform, ie one of: 'BP' (Biological Process), 'CC' (Celluarl Component), or 'MF' (Mollecular Function).
+	A string indicating which type of GO analysis to perform, ie one of: 'BP' (Biological Process), 'CC' (Celluarl Component), or 'MF' (Mollecular Function).
 
 	organism
-		A string indicating to Biomart which organism the provided ensembl genelist is from. Some examples are 'mmusculus_gene_ensembl', 'hsapiens_gene_ensembl', 'dmelanogaster_gene_ensembl', etc. For the full list run 'ensembl=useMart("ensembl"); listDatasets(ensembl)' or see http://www.bioconductor.org/packages/release/bioc/vignettes/biomaRt/inst/doc/biomaRt.pdf
+	A string indicating to Biomart which organism the provided ensembl genelist is from. Some examples are 'mmusculus_gene_ensembl', 'hsapiens_gene_ensembl', 'dmelanogaster_gene_ensembl', etc. For the full list run 'ensembl=useMart("ensembl"); listDatasets(ensembl)' or see http://www.bioconductor.org/packages/release/bioc/vignettes/biomaRt/inst/doc/biomaRt.pdf
 
 Value:	
 	A datatable containing the top go terms enriched in the given gene list, with the data for their expected occurance, observed occurance, enrichment, and the classic Fisher test.
