@@ -25,12 +25,13 @@ Author(s):
 	Richard Dannebaum
 	Vasha DuTell
 
-Examples:
-	##name the desired reportfile or point to existing one
-	my.reportfile <- paste(./tophat_output/alignmentreport.rda',sep='')
+Example:
+```
+##name the desired reportfile or point to existing one
+my.reportfile <- paste(./tophat_output/alignmentreport.rda',sep='')
 	my.plot <- runTophatReport(my.reportfile)
 	my.plot    
-
+```
 
 =================
 calcFC, calcLogFC
@@ -63,11 +64,12 @@ Author(s):
 	Dar Dahen
 
 Example:
-	wild.type.rpkm <- c(1,3,2,6)
-	mutant.rpkm <- c(2,0,8,9)
-	my.fc <- calcFC(wild.type.rpkm, mutant.rpkm)
-	my.log.fc <- calcLogFC(wild.type.rpkm, mutant.rpkm)
-
+```
+wild.type.rpkm <- c(1,3,2,6)
+mutant.rpkm <- c(2,0,8,9)
+my.fc <- calcFC(wild.type.rpkm, mutant.rpkm)
+my.log.fc <- calcLogFC(wild.type.rpkm, mutant.rpkm)
+```
 
 =================
 runTG
@@ -101,9 +103,11 @@ Author(s):
 
 
 Example:
-	my.genelist <-c('ENSMUSG00000020830','ENSMUSG00000041333','ENSMUSG00000055961')
-	my.table <- runTG(my.genelist, 'BP', 'mmusculus_gene_ensembl')
-	my.table
+```
+my.genelist <-c('ENSMUSG00000020830','ENSMUSG00000041333','ENSMUSG00000055961')
+my.table <- runTG(my.genelist, 'BP', 'mmusculus_gene_ensembl')
+my.table
+```
 	
 =================
 plotTG
@@ -127,6 +131,8 @@ Author(s):
 	Ashley Woodfin
 
 Example:
-	my.table <- runTG(my.genelist, 'BP', 'mmusculus_gene_ensembl')
-	my.plot <- plotTG(my.table)
-	my.plot
+```
+my.table <- runTG(my.genelist, 'BP', 'mmusculus_gene_ensembl')
+my.plot <- plotTG(my.table)
+my.plot
+```
