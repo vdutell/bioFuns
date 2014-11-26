@@ -1,5 +1,5 @@
 #bioFuns
-##Useful (and Fun!) Bioinformatics Functions in R and shell
+##Useful Bioinformatics Functions in R and shell
 
 Vasha DuTell
 vgd@stowers.org
