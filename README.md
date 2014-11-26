@@ -1,9 +1,68 @@
-#bioFuns - 
-##Useful (and Fun!) Bioinformatics Functions
+#bioFuns
+##Useful (and Fun!) Bioinformatics Functions in R and shell
 
 Vasha DuTell
 vgd@stowers.org
 vashadutell@gmail.com
+
+
+=================
+qsubFqDir.sh
+=================
+
+####Description:
+A generic function for SGE queued clusters to run any given script (such as alignment or fastqc) on all *.fq.gz files in the given directory, qsubbing them onto the queue.
+
+####Usage:
+qsubTH.sh script source
+
+####Arguments:
+**script**
+The path to the script to be run on each of the .fq.gz files
+
+**source**
+A filepath indicating where the script should look for .fq.gz files to run. Note: must NOT include the final '/' and is NOT recursive.
+
+####Value:
+Results in an individual call of the provided script to each .fq.gz file in the source directory.
+
+####Author(s):
+Vasha DuTell
+
+####Example:
+```
+qsubFqDir ./runTophat.sh ./aln/fq
+```
+
+=================
+runTophat.sh
+=================
+
+####Description:
+For use on SGE queued clusters, takes a .fq.gz file and runs Tophat on it with a set of parameters
+
+####Usage:
+runTophat.sh fastqFile
+
+####Arguments:
+**fastqFile**
+The path to the fastqFile to be aligned with Tophat
+
+**source**
+A filepath indicating where the script should look for .fq.gz files to run. Note: must NOT include the final '/' and is NOT recursive.
+
+####Value:
+Runs Tophat on the supplied file
+
+####Author(s):
+Vasha DuTell
+
+####Examples:
+```
+./runTophat.sh ./aln/fq/sample1.fq.gz #run on just one fq file
+./qsubFqDir ./runTophat.sh ./aln/fq #run on all fq files
+
+```
 
 =================
 alignStatsTH.R
@@ -36,7 +95,7 @@ my.reportfile <- paste(./tophat_output/alignmentreport.rda',sep='')
 ```
 
 =================
-calcFC, calcLogFC
+calcFC.R
 =================
 
 ####Description:
@@ -73,7 +132,7 @@ my.log.fc <- calcLogFC(wild.type.rpkm, mutant.rpkm)
 ```
 
 =================
-runTG
+runTG.R
 =================
 
 ####Description:
@@ -112,7 +171,7 @@ my.table
 ```
 	
 =================
-plotTG
+plotTG.R
 =================
 
 ####Description:
