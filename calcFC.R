@@ -1,4 +1,4 @@
-##vasha's beautiful fold change function with help from Dar!!!
+##function to calculate fold change given two vectors of expression values
 calc.fc <- function(va,vb){  
     va <- va+.1
     vb <- vb+.1
@@ -23,4 +23,3 @@ calc.log.fc <- function(va,vb){
     ##return the value that was TRUE
     return(as.numeric(pos.v - neg.v))
 }  
-
