@@ -35,6 +35,67 @@ qsubFqDir ./runTophat.sh ./aln/fq
 ```
 
 =================
+runTophatPE.sh
+=================
+
+####Description:
+For use on SGE queued clusters, takes a set of matched paired end .fq.gz files and runs Tophat on it with a set of parameters
+
+####Usage:
+runTophat.sh fastqFile
+
+####Arguments:
+**fastqFile**
+The path to the paired end fastqFiles to be aligned with Tophat
+Note: Paired end files must have the format:
+right hand reads sample_1.fq.gz
+left hand reads: sample_2.fq.gz
+
+**source**
+A filepath indicating where the script should look for paired end .fq.gz files to run. Note: must NOT include the final '/' and is NOT recursive.
+
+####Value:
+Runs Tophat on the supplied files
+
+####Author(s):
+Vasha DuTell
+
+####Examples:
+```
+./runTophatPE.sh ./aln/fq/sample1_1.fq.gz ./aln/fq/sample1_2.fq.gz #run on just one set of fq files
+./qsubFqDir ./runTophat.sh ./aln/fq #run on all paired end fq file pairs
+
+```
+
+=================
+qsubFqDirPE.sh
+=================
+
+####Description:
+A generic function for SGE queued clusters to run any given script (such as alignment or fastqc) on all 1.fq.gz files in the given directory, qsubbing them onto the queue. May be single or paired end reads, but matching paired end reads must be in the format sample_1.fq.gz, sample_2.fq.gz, and single end reads must NOT be in this format.
+
+####Usage:
+qsubFQDirPE.sh script source
+
+####Arguments:
+**script**
+The path to the script to be run on each of the .fq.gz files OR on each pair of paired end matching .fq.gz files in the correct format (see Description)
+
+**source**
+A filepath indicating where the script should look for .fq.gz files to run. Note: must NOT include the final '/' and is NOT recursive.
+
+####Value:
+Results in an individual call of the provided script to each .fq.gz file in the source directory OR each pair of paired end .fq.gz files.
+
+####Author(s):
+Vasha DuTell
+
+####Example:
+```
+qsubFqDir ./runTophat.sh ./aln/fq
+```
+
+=================
 runTophat.sh
 =================
 
